@@ -1,19 +1,10 @@
 ﻿// Each #kernel tells which function to compile; you can have many kernels
 #pragma kernel CSMain
 
-// Create a RenderTexture with enableRandomWrite flag and set it
-// with cs.SetTexture
-RWTexture2D<float4> Result;
-
-RWStructuredBuffer<float3> debugger;
-
-float3 newPos;
-float f0;
-float f1;
-float f2;
-float time;
-
 uint rng_state;
+float deltaTime;
+float2 mousePosition;
+
 
 uint rand_lcg()
 {
@@ -31,22 +22,43 @@ uint rand_xorshift()
     return rng_state;
 }
 
-[numthreads(8,8,1)]
-void CSMain (uint3 id : SV_DispatchThreadID)
+struct Particle {
+    float3 position;
+    float3 velocity;
+    float life;
+};
+
+RWStructuredBuffer<Particle> buffer;
+
+[numthreads(256, 1, 1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
 {
-    // TODO: insert actual code here!
-
-    rng_state = int(time * 10000);
-
+    rng_state = id.x;
     uint r0 = rand_xorshift();
     uint r1 = rand_xorshift();
     uint r2 = rand_xorshift();
-    
-    f0 = float(rand_xorshift())*(1.0/4294967296.0);
-    f1 = float(rand_xorshift())*(1.0/4294967296.0);
-    f2 = float(rand_xorshift())*(1.0/4294967296.0);
-    
-    debugger[id.x] = float3(f0, f1, f2);
-    Result[id.xy] = float4(f0, f1, f2, 0.0);
-    
+
+    buffer[id.x].velocity += float3(float(r0) * 0.2134, float(r1) * 0.5463, float(r2) * 0.84125);
+    if (length(buffer[id.x].velocity > 1.0)) {
+        normalize(buffer[id.x].velocity);
+    }
+    buffer[id.x].life -= deltaTime;
+    buffer[id.x].position += float3(float(r0) * 0.2, float(r1) * 0.2, float(r2) * 0.2);
+    // buffer[id.x].position = float3(0, 0, 15);
+    if (buffer[id.x].life < 0)
+    {
+
+        float f0 = float(rand_xorshift()) * (1.0 / 4294967296.0) - 0.5;
+        float f1 = float(rand_xorshift()) * (1.0 / 4294967296.0) - 0.5;
+        float f2 = float(rand_xorshift()) * (1.0 / 4294967296.0) - 0.5;
+        float3 normalF3 = normalize(float3(f0, f1, f2)) * 0.8f;
+        //normalF3 *= 10;
+        normalF3 *= float(rand_xorshift()) * (1.0 / 4294967296.0);
+        float3 pos = float3(normalF3.x, normalF3.y, normalF3.z);
+        buffer[id.x].position = float3(normalF3.x + mousePosition.x, normalF3.y + mousePosition.y, normalF3.z + 3.0);
+        buffer[id.x].life = 1.5;
+    }
+    // buffer[id.x].position += pos * deltaTime;;
+
+
 }
