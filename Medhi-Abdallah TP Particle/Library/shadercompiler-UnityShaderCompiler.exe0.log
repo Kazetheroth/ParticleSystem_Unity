@@ -1,0 +1,52 @@
+Base path: 'E:/Program Files (x86)/Unity/2019.3.8f1/Editor/Data', plugins path 'E:/Program Files (x86)/Unity/2019.3.8f1/Editor/Data/PlaybackEngines'
+Cmd: initializeCompiler
+Cmd: preprocessCompute
+  insize=1226 outsize=1225 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=1225 outsize=1693 ok=1
+Cmd: preprocessCompute
+  insize=1225 outsize=1224 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at KarimShader.compute(50): invalid type for index - index must be a scalar, or a vector with the correct number of dimensions
+  api=4 insize=1224 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=1227 outsize=1226 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at KarimShader.compute(50): invalid type for index - index must be a scalar, or a vector with the correct number of dimensions
+  api=4 insize=1226 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=1225 outsize=1224 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at KarimShader.compute(50): invalid type for index - index must be a scalar, or a vector with the correct number of dimensions
+  api=4 insize=1224 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=1226 outsize=1225 ok=1
+Cmd: preprocessCompute
+  insize=1224 outsize=1223 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=1223 outsize=1693 ok=1
+Cmd: preprocessCompute
+  insize=1228 outsize=1227 ok=1
+Cmd: compileComputeKernel
+  error: 2 plat 4 at KarimShader.compute(34): the product of the arguments of numthreads(256,256,1) must be less than or equal to 1024
+  api=4 insize=1227 outsize=0 ok=0
+Cmd: preprocessCompute
+  insize=1224 outsize=1223 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=1223 outsize=1693 ok=1
+Cmd: preprocessCompute
+  insize=1221 outsize=1220 ok=1
+Cmd: compileComputeKernel
+  api=4 insize=1220 outsize=1701 ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=1402 outsize=822 kw=UNITY_PASS_FORWARDBASE _ALPHABLEND_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=1402 outsize=422 kw=UNITY_PASS_FORWARDBASE _ALPHABLEND_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=2355 outsize=790 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=2355 outsize=402 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=0 insize=934 outsize=818 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
+Cmd: compileSnippet
+  api=4 type=1 insize=934 outsize=250 kw= pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA UNITY_LIGHT_PROBE_PROXY_VOLUME UNITY_LIGHTMAP_FULL_HDR ok=1
